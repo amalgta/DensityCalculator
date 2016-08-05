@@ -1,4 +1,4 @@
-package com.styx.androiddevelopertoolbox.utils;
+package com.styx.densitycalculator.utils;
 
 /**
  * Created by amalg on 16-06-2016.

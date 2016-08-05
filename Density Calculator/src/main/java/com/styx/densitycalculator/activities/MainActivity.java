@@ -1,22 +1,27 @@
-package com.styx.androiddevelopertoolbox.activities;
+package com.styx.densitycalculator.activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import com.styx.androiddevelopertoolbox.R;
-import com.styx.androiddevelopertoolbox.fragments.DensityCalculatorFragment;
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
+import com.styx.densitycalculator.R;
+import com.styx.densitycalculator.fragments.DensityCalculatorFragment;
+
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
@@ -30,14 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(myToolbar);
 
-        Snackbar.make(fp, "Hello. I am Snackbar!", Snackbar.LENGTH_SHORT)
-                .setAction("Undo", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(getApplicationContext(), "Make", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .show();
 
         DesignDemoPagerAdapter adapter = new DesignDemoPagerAdapter(getSupportFragmentManager());
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -62,9 +59,31 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_favorite) {
-
+            new MaterialStyledDialog(this)
+                    .setTitle("Amal Thomas")
+                    .setDescription("Thank you for using Density Calculator. Cheers -Styx")
+                    .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.mipmap.ic_launcher))
+                    .setPositive("Website", new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(MaterialDialog dialog, DialogAction which) {
+                            Uri uri = Uri.parse("http://www.thegta.in"); // missing 'http://' will cause crashed
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegative("Github", new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(MaterialDialog dialog, DialogAction which) {
+                            Uri uri = Uri.parse("https://github.com/amalgta"); // missing 'http://' will cause crashed
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                            Log.d("MaterialStyledDialogs", "Do something!");
+                        }
+                    })
+                    .show();
             return true;
         }
         return super.onOptionsItemSelected(item);

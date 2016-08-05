@@ -1,4 +1,4 @@
-package com.styx.androiddevelopertoolbox.fragments;
+package com.styx.densitycalculator.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.styx.androiddevelopertoolbox.R;
-import com.styx.androiddevelopertoolbox.utils.Utils;
+import com.styx.densitycalculator.R;
+import com.styx.densitycalculator.utils.Utils;
 
 /**
  * Created by amalg on 16-06-2016.

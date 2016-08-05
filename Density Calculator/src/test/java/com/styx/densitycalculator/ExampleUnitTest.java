@@ -1,4 +1,4 @@
-package com.styx.androiddevelopertoolbox;
+package com.styx.densitycalculator;
 
 import org.junit.Test;
 
