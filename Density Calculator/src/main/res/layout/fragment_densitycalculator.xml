@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/appbar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/fragmentTitle"
-        app:title="Density Calculator" />
 
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -81,7 +73,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="@color/colorLight"
                         android:gravity="center"
                         android:text="100%" />
                 </android.support.v7.widget.LinearLayoutCompat>
@@ -131,7 +123,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="@color/colorLight"
                         android:gravity="center"
                         android:text="150%" />
                 </android.support.v7.widget.LinearLayoutCompat>
@@ -180,7 +172,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="@color/colorLight"
                         android:gravity="center"
                         android:text="200%" />
                 </android.support.v7.widget.LinearLayoutCompat>
@@ -229,7 +221,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="@color/colorLight"
                         android:gravity="center"
                         android:text="225%" />
                 </android.support.v7.widget.LinearLayoutCompat>

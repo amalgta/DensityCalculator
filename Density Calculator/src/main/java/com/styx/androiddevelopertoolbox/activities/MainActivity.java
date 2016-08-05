@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -18,7 +17,6 @@ import android.widget.Toast;
 
 import com.styx.androiddevelopertoolbox.R;
 import com.styx.androiddevelopertoolbox.fragments.DensityCalculatorFragment;
-import com.styx.androiddevelopertoolbox.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
@@ -40,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+
         DesignDemoPagerAdapter adapter = new DesignDemoPagerAdapter(getSupportFragmentManager());
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(adapter);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
-        tabLayout.setupWithViewPager(viewPager);
+        //TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
+
+        // tabLayout.setupWithViewPager(viewPager);
 
     }
 
@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_favorite) {
+
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -77,27 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            if (position == 0) {
-                return new HomeFragment();
-            } else {
                 return new DensityCalculatorFragment();
-            }
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 1;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            if (position == 0) {
-                return "Home";
-            } else if (position == 1) {
-                return "Density Calculator";
-            } else {
                 return "Null";
-            }
         }
     }
 }
